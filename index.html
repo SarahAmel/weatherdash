@@ -1,89 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <title>Weather Dashboard</title>
+  
+    <head>
+      <meta charset="UTF-8"/>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+      <link rel="stylesheet" href="./assets/css/style.css"/>
+      <title>Weather Dashboard </title>
   </head>
-
+  
   <body>
-    <header
-      class="container-fluid text-center text-white p-2 weather-header" style="background-color: rgb(17, 190, 233);"
-    >
-      <h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-weight: bolder;">Weather Dashboard</h1>
-    </header>
+  
+      <!-- entire climatecast container-->
+      <div class="climate-container card mt-3 mb-3 border-color-bold">
 
-    <!-- max-width for ultra wide resolutions -->
-    <div class="container-fluid" style="max-width: 1400px">
-      <div class="row">
-        <aside class="col-lg-3 pb-3">
-          <h2 id="form-heading" class="mt-1 h3 form-label" style="font-weight: bolder;">
-            Search for a City:
-          </h2>
-          <form id="search-form" class="form">
-            <div class="form-inline form-group">
-              <div class="input-group">
-                <input
-                  class="form-input weather-search"
-                  type="text"
-                  id="search-input"
-                  placeholder="Atlanta"
-                  aria-labelledby="form-heading"
-                  aria-controls="today forecast"
-                />
-                <div class="input-group-append">
-                  <button
-                    type="submit"
-                    class="btn search-button"
-                    style="background-color:rgb(246, 162, 235); color: rgb(60, 243, 23);"
-                    id="search-button"
-                    aria-label="submit search"
-                  >
-                    Search
-                  </button>
-                  <hr class="hr weather-hr" />
+          <!-- header title container-->
+          <div class="banner p-2 text-center">
+        
+              <h1 class="pt-2">Weather Dashboard</h1>
+              <hr class="w-75">
+          </div>
+  
+          <!-- search, search history, current forecast, and five-day forecast container -->
+          <div class="city-wrapper d-flex justify-content-around p-3">
+              
+              <!-- search and search history container -->
+              <aside>
+                <h3 class="text-center">Search for a City:</h3>
+                <div class="text-center"><input class="border-color rounded" type="text" id="city" placeholder="Name a city please."></div>
+                <div class="text-center pt-3">
+                    <button id="search" class="btn col-9">Search</button>
                 </div>
-              </div>
-            </div>
-          </form>
-          <div class="list-group" id="history"></div>
-        </aside>
+                <hr>
+                <h4 class="text-center">Search History</h4>
 
-        <div class="col-lg-9 pb-3">
-          <section
-            id="today"
-            class="mt-3"
-            role="region"
-            aria-live="polite"
-          ></section>
-          <section
-            id="forecast"
-            class="row mt-3"
-            role="region"
-            aria-live="polite"
-          ></section>
-        </div>
+                <!-- search history buttons -->
+                <div class="history text-center"></div>
+            </aside>
+
+            <main>
+  
+              <main>
+  
+                  <!-- current forecast container -->
+                  <h4>Current Forecast:</h4>
+                  <div class="card border-color">
+                  <div id="city-title" class="city-title text-center card-body pb-0">Current Day</div>
+                  <div id="current-data" class="current-data card-body pt-0"></div>
+                  </div>
+  
+                  <!-- five-day forecast container -->
+                  <h4 class="pt-3">5-Day Forecast:</h4>
+                  <div class="container">
+                      <div class="forecast row">
+                          <div id="forecast-data-1" class="forecast-data card p-2 m-1 text-center font-color-drk col-12">Day 1</div>
+                          <div id="forecast-data-2" class="forecast-data card p-2 m-1 text-center font-color-drk col-12">Day 2</div>
+                          <div id="forecast-data-3" class="forecast-data card p-2 m-1 text-center font-color-drk col-12">Day 3</div>
+                          <div id="forecast-data-4" class="forecast-data card p-2 m-1 text-center font-color-drk col-12">Day 4</div>
+                          <div id="forecast-data-5" class="forecast-data card p-2 m-1 text-center font-color-drk col-12">Day 5</div>
+                      </div>
+                  </div>    
+              </main>
+          </div>
       </div>
-    </div>
+  
+  <!-- script section -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
-    <!-- use day.js to easily format dates -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js"
-      integrity="sha512-0fcCRl828lBlrSCa8QJY51mtNqTcHxabaXVLPgw/jPA5Nutujh6CbTdDgRzl9aSPYW/uuE7c4SffFUQFBAy6lg=="
-      crossorigin="anonymous"
-    ></script>
-    <script 
-      src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/plugin/utc.min.js" 
-      integrity="sha512-m00bfmYnAl3plEBlQfeQUhw/U2uvmw29V2+jxSWpAjankMWS+zAsjezbKWDEJNXqWq9o9qQZSOiA2RKDpa4D5w==" 
-      crossorigin="anonymous"
-    ></script>
-    <script 
-      src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/plugin/timezone.min.js" 
-      integrity="sha512-pslqxxHAYPCxaSeFSmXXxDkLejD5dbFVC66aiVq0z4v7VTJBU+wqcG1OpNh4p3MjS2D6NCwz/H2QmSc7dXxryg==" 
-      crossorigin="anonymous"
-    ></script>
-    <script src="./assets/script.js"></script>
+  <script src="./assets/js/config.js"></script>
+  <script src="./assets/js/script.js"></script>
+  
   </body>
+   
+
 </html>

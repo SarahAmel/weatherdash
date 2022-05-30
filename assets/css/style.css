@@ -1,0 +1,175 @@
+/* #mainHeader {
+    text-align: center;
+}
+
+
+#searchBtns {
+    list-style: none;
+}
+
+#searchBtns li{
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.recentCity {
+    border: none;
+    background: none;
+    font-size: 2rem;
+}
+
+.recentCity:hover {
+    background: rgb(14, 217, 220);
+    border-radius: 10px;
+} */
+/* 
+
+button {
+    display: inline-block;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 100%;
+    background-color: #199d24;
+    border-radius: 5px;
+    padding: 2px 10px;
+    color: rgb(237, 20, 204);
+    border: 0;
+    transition: background-color 0.1s;
+  } */
+
+
+
+  
+
+* {
+    font-family: 'Times New Roman', Times, serif ;
+}
+
+:root {
+    --dark: rgb(18, 26, 5);
+    --light: rgb(26, 196, 173);
+}
+
+.climate-container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+aside {
+    width: 25%;
+}
+
+main {
+    width: 70%;
+}
+
+span {
+    padding: 5px 5px;
+    color: var(--dark);
+}
+
+.current-data {
+    line-height: 50px;
+    /* font-size: 20px; */
+}
+
+.forecast-data {
+    width: 25%;
+    line-height: 2rem;
+    border: 6px solid rgb(19, 204, 232);
+    color: rgb(207, 46, 159);
+}
+
+.border-color {
+    border: 5px solid rgb(24, 227, 210);
+    
+}
+
+.border-color-bold {
+    border: 7px solid rgb(20, 219, 30);
+    margin: 10px;
+    padding-left: 75px;
+  
+}
+
+.bg-color {
+    
+    background-color: rgb(10, 10, 225) ;
+}
+
+.font-color-drk {
+    color: rgb(236, 60, 233);
+    font-size: 44px;
+}
+
+.font-color-light {
+    color: var(--light);
+}
+
+/* uvi color block colors */
+.low {
+    background-color: rgb(83,146,89);
+    color: var(--light);
+}
+
+.moderate {
+    /* 3 to 5 */
+    background-color: rgb(255,225,98);
+}
+
+.high {
+    /* 6 to 7 */
+    background-color: rgb(255,142,4);
+    color: var(--light);
+}
+
+.very-high {
+    /* 8 to 10 */
+    background-color: rgb(190,3,1);
+    color: var(--light);
+}
+
+.extreme {
+    /* 11 or more */
+    background-color: rgb(91, 46, 215);
+    color: var(--light);
+}
+
+/* weather condition description colors */
+.clear {
+    background-color: rgb(102, 14, 101);
+}
+
+.clouds {
+    background-color: rgba(49, 150, 31, 0.75);
+    color: var(--light);
+}
+
+.rain {
+    background-color: rgba(7, 42, 77, 0.75);
+    color: var(--light);
+}
+
+.thunderstorm {
+    background-color: rgba(23, 22, 27, 0.75);
+    color: var(--light);
+}
+
+.snow {
+    background-color: rgba(23, 95, 111, 0.75);
+}
+
+.atmosphere {
+    background-color: rgba(230, 140, 38, 0.75);
+}
+
+#search{
+    background-color: rgb(226, 91, 241);
+    font-size: 20px ;
+    transition: background-color 0.1s;
+
+}
+
+#search:hover{
+    background-color:rgb(19, 204, 232);
+}
